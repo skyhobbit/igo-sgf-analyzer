@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
-    <!-- テキスト出力を指定 -->
+    <!-- Specify text output -->
     <xsl:output method="text"/>
 
-    <!-- パラメータの宣言 -->
+    <!-- Declare parameter -->
     <xsl:param name="inputName"/>
 
-    <!-- 入力された名前で一致するエントリを選択 -->
+    <!-- Select the entry that matches the input name -->
     <xsl:template match="/">
         <xsl:apply-templates select="//entry[tag/gogod=$inputName]"/>
     </xsl:template>
 
-    <!-- kanjivariant要素の内容だけをテキストとして出力 -->
+    <!-- Output only the content of the kanjivariant element -->
     <xsl:template match="entry">
         <xsl:value-of select="surname/jmod"/>
         <xsl:value-of select="given/jmod"/>
